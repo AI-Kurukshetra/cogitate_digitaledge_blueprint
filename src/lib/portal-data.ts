@@ -117,8 +117,9 @@ export async function fetchPortalDocuments(policyholderId: string) {
     (a, b) =>
       new Date(String(b.created_at ?? 0)).getTime() - new Date(String(a.created_at ?? 0)).getTime()
   );
+  const err = policyDocs.error ?? claimDocs.error;
   return {
     data: combined.slice(0, 100),
-    error: policyDocs.error ?? claimDocs.error ?? null,
+    error: err ? (typeof err === "string" ? err : err.message) : null,
   };
 }
