@@ -1,0 +1,18 @@
+{
+  "/api/admin/policyholders/route": "app/api/admin/policyholders/route.js",
+  "/api/admin/users/route": "app/api/admin/users/route.js",
+  "/api/portal/register-complete/route": "app/api/portal/register-complete/route.js",
+  "/auth/login/route": "app/auth/login/route.js",
+  "/auth/logout/route": "app/auth/logout/route.js",
+  "/dashboard/[module]/page": "app/dashboard/[module]/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/users/create/page": "app/dashboard/users/create/page.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/portal/login/page": "app/portal/login/page.js",
+  "/portal/page": "app/portal/page.js",
+  "/portal/profile/page": "app/portal/profile/page.js",
+  "/portal/register/page": "app/portal/register/page.js",
+  "/portal/request-change/page": "app/portal/request-change/page.js"
+}

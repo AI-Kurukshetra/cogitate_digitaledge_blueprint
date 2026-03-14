@@ -1,0 +1,219 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/[module]",
+      "regex": "^/api/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPmodule": "nxtPmodule"
+      },
+      "namedRegex": "^/api/(?<nxtPmodule>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/dashboard/[module]",
+      "regex": "^/dashboard/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPmodule": "nxtPmodule"
+      },
+      "namedRegex": "^/dashboard/(?<nxtPmodule>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/portal/policies/[id]",
+      "regex": "^/portal/policies/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/portal/policies/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/api/admin/api-keys",
+      "regex": "^/api/admin/api\\-keys(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/api\\-keys(?:/)?$"
+    },
+    {
+      "page": "/api/admin/policyholders",
+      "regex": "^/api/admin/policyholders(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/policyholders(?:/)?$"
+    },
+    {
+      "page": "/api/admin/users",
+      "regex": "^/api/admin/users(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/users(?:/)?$"
+    },
+    {
+      "page": "/api/documents/generate",
+      "regex": "^/api/documents/generate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/documents/generate(?:/)?$"
+    },
+    {
+      "page": "/api/export",
+      "regex": "^/api/export(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/export(?:/)?$"
+    },
+    {
+      "page": "/api/import",
+      "regex": "^/api/import(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/import(?:/)?$"
+    },
+    {
+      "page": "/api/portal/register-complete",
+      "regex": "^/api/portal/register\\-complete(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/portal/register\\-complete(?:/)?$"
+    },
+    {
+      "page": "/api/portal/request-change",
+      "regex": "^/api/portal/request\\-change(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/portal/request\\-change(?:/)?$"
+    },
+    {
+      "page": "/api/rating/calculate",
+      "regex": "^/api/rating/calculate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/rating/calculate(?:/)?$"
+    },
+    {
+      "page": "/auth/login",
+      "regex": "^/auth/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/login(?:/)?$"
+    },
+    {
+      "page": "/auth/logout",
+      "regex": "^/auth/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/auth/logout(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/dashboard/api-keys",
+      "regex": "^/dashboard/api\\-keys(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/api\\-keys(?:/)?$"
+    },
+    {
+      "page": "/dashboard/profile",
+      "regex": "^/dashboard/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/profile(?:/)?$"
+    },
+    {
+      "page": "/dashboard/users/create",
+      "regex": "^/dashboard/users/create(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/users/create(?:/)?$"
+    },
+    {
+      "page": "/favicon.ico",
+      "regex": "^/favicon\\.ico(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/favicon\\.ico(?:/)?$"
+    },
+    {
+      "page": "/login",
+      "regex": "^/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/login(?:/)?$"
+    },
+    {
+      "page": "/portal",
+      "regex": "^/portal(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal(?:/)?$"
+    },
+    {
+      "page": "/portal/login",
+      "regex": "^/portal/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal/login(?:/)?$"
+    },
+    {
+      "page": "/portal/payments",
+      "regex": "^/portal/payments(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal/payments(?:/)?$"
+    },
+    {
+      "page": "/portal/register",
+      "regex": "^/portal/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal/register(?:/)?$"
+    },
+    {
+      "page": "/portal/request-change",
+      "regex": "^/portal/request\\-change(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/portal/request\\-change(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
