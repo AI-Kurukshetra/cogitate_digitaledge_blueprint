@@ -44,6 +44,12 @@ export function PortalShell({ children, userName }: PortalShellProps) {
             Payments
           </Link>
           <Link
+            href="/portal/documents"
+            className="rounded-lg border border-[color:var(--line)] bg-white px-4 py-2.5 text-sm font-medium text-[color:var(--ink)] transition hover:bg-emerald-50 hover:border-emerald-200"
+          >
+            Documents
+          </Link>
+          <Link
             href="/portal/request-change"
             className="rounded-lg border border-[color:var(--line)] bg-white px-4 py-2.5 text-sm font-medium text-[color:var(--ink)] transition hover:bg-emerald-50 hover:border-emerald-200"
           >

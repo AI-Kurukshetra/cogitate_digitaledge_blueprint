@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ModuleTable } from "@/components/module-table";
+import { ModuleTableWithActions } from "@/components/module-table-with-actions";
 import { UsersTableWithActions } from "@/components/users-table-with-actions";
 import { requireUserContext } from "@/lib/auth";
 import { fetchModuleRows } from "@/lib/data";
@@ -49,6 +50,14 @@ export default async function ModulePage({ params }: ModulePageProps) {
             Create user
           </Link>
         )}
+        {moduleConfig.createRoles?.includes(user.role) && moduleKey !== "users" && (
+          <Link
+            href={`/dashboard/${moduleKey}/create`}
+            className="btn-primary inline-flex rounded-xl px-4 py-2.5 text-sm"
+          >
+            Create {moduleKey === "policies" ? "policy" : moduleKey === "quotes" ? "quote" : moduleKey === "claims" ? "claim" : moduleKey === "documents" ? "document" : moduleConfig.label.toLowerCase().replace(/s$/, "")}
+          </Link>
+        )}
       </header>
 
       <section className="mt-8">
@@ -60,6 +69,16 @@ export default async function ModulePage({ params }: ModulePageProps) {
             rows={result?.rows ?? []}
             columns={moduleConfig.primaryColumns}
             currentUserId={user.id}
+          />
+        ) : (moduleKey === "policies" || moduleKey === "quotes" || moduleKey === "claims" || moduleKey === "documents") &&
+          moduleConfig.createRoles?.includes(user.role) ? (
+          <ModuleTableWithActions
+            moduleKey={moduleKey}
+            moduleLabel={moduleConfig.label}
+            rows={result?.rows ?? []}
+            columns={moduleConfig.primaryColumns}
+            canEdit
+            canDelete
           />
         ) : (
           <ModuleTable rows={result?.rows ?? []} columns={moduleConfig.primaryColumns} />

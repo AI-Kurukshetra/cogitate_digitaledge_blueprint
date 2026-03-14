@@ -44,3 +44,55 @@ export async function fetchModuleRows(moduleKey: ModuleKey) {
   return { module: moduleConfig, rows: data ?? [], error: null };
 }
 
+export const fetchPolicyCreateOptions = cache(async () => {
+  const supabase = await createClient();
+  const [ph, brokers, carriers, products] = await Promise.all([
+    supabase.from("policyholders").select("id, full_name, email, state").order("full_name"),
+    supabase.from("brokers").select("id, agency_name, contact_name, state").order("agency_name"),
+    supabase.from("carriers").select("id, name, state").order("name"),
+    supabase.from("products").select("id, name, line_of_business, carrier_id").order("name"),
+  ]);
+  return {
+    policyholders: ph.data ?? [],
+    brokers: brokers.data ?? [],
+    carriers: carriers.data ?? [],
+    products: products.data ?? [],
+  };
+});
+
+export const fetchQuoteCreateOptions = cache(async () => {
+  const supabase = await createClient();
+  const [ph, brokers, products] = await Promise.all([
+    supabase.from("policyholders").select("id, full_name, email, state").order("full_name"),
+    supabase.from("brokers").select("id, agency_name, contact_name").order("agency_name"),
+    supabase.from("products").select("id, name, line_of_business").order("name"),
+  ]);
+  return {
+    policyholders: ph.data ?? [],
+    brokers: brokers.data ?? [],
+    products: products.data ?? [],
+  };
+});
+
+export const fetchClaimCreateOptions = cache(async () => {
+  const supabase = await createClient();
+  const { data: policies } = await supabase
+    .from("policies")
+    .select("id, policy_number, line_of_business, status")
+    .order("policy_number", { ascending: false })
+    .limit(100);
+  return { policies: policies ?? [] };
+});
+
+export const fetchDocumentCreateOptions = cache(async () => {
+  const supabase = await createClient();
+  const [policies, claims] = await Promise.all([
+    supabase.from("policies").select("id, policy_number, line_of_business").order("policy_number", { ascending: false }).limit(100),
+    supabase.from("claims").select("id, claim_number, status").order("claim_number", { ascending: false }).limit(100),
+  ]);
+  return {
+    policies: policies.data ?? [],
+    claims: claims.data ?? [],
+  };
+});
+

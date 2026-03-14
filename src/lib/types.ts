@@ -39,5 +39,7 @@ export type ModuleConfig = {
   table: string;
   primaryColumns: string[];
   allowedRoles: AppRole[];
+  /** Roles that can create new records from the UI. If omitted, no create button is shown. */
+  createRoles?: AppRole[];
 };
 

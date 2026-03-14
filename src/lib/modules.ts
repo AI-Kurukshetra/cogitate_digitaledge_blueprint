@@ -16,6 +16,7 @@ export const modules: ModuleConfig[] = [
     table: "policies",
     primaryColumns: ["policy_number", "line_of_business", "status", "effective_date", "annual_premium"],
     allowedRoles: ["admin", "underwriter", "broker", "viewer", "compliance"],
+    createRoles: ["admin", "underwriter", "broker"],
   },
   {
     key: "quotes",
@@ -24,6 +25,7 @@ export const modules: ModuleConfig[] = [
     table: "quotes",
     primaryColumns: ["quote_number", "status", "valid_until", "quoted_premium"],
     allowedRoles: ["admin", "underwriter", "broker", "viewer"],
+    createRoles: ["admin", "underwriter", "broker"],
   },
   {
     key: "payments",
@@ -40,6 +42,7 @@ export const modules: ModuleConfig[] = [
     table: "claims",
     primaryColumns: ["claim_number", "status", "loss_date", "reserve_amount"],
     allowedRoles: ["admin", "claims", "underwriter", "viewer"],
+    createRoles: ["admin", "claims", "underwriter"],
   },
   {
     key: "documents",
@@ -48,6 +51,7 @@ export const modules: ModuleConfig[] = [
     table: "documents",
     primaryColumns: ["document_name", "document_type", "version", "created_at"],
     allowedRoles: ["admin", "underwriter", "broker", "compliance", "viewer"],
+    createRoles: ["admin", "underwriter", "broker", "compliance"],
   },
   {
     key: "underwriting",

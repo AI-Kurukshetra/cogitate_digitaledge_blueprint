@@ -58,6 +58,7 @@ Set values in `.env.local`:
 - `supabase/schema.sql`
 - `supabase/seed.sql`
 - `supabase/migrations/001_portal_and_api_gateway.sql` (adds policyholder role and `api_keys` table)
+- `supabase/migrations/002_storage_documents_bucket.sql` (optional: creates Storage bucket `documents` and RLS; if skipped, the app creates the bucket on first document upload using the service role)
 
 4. Seed authentication users + role profiles:
 
